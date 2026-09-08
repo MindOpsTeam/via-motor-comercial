@@ -146,6 +146,22 @@ regenerou `types.ts`. Foram esses tipos que denunciaram os defeitos 4 e 5: com o
 `workspace_id` obrigatório, o compilador apontou exatamente onde o front ainda escrevia
 com a fronteira antiga.
 
+### O que o Lovable fez com o commit
+
+Sincronizou `f8fb8b8` e **regenerou os tipos** — esses ficaram (o gerador oficial dele é
+mais completo que o meu: 154 relacionamentos contra 141, e já inclui `inbox_send_message`).
+
+Fora isso, fez o que eu pedi explicitamente que não fizesse: criou uma migration própria
+(um `SELECT 1` inofensivo, para disparar a regeneração) e editou o front por conta.
+
+As edições dele foram descartadas no merge, porque calavam o compilador sem resolver nada:
+adicionou `workspace_id` **mantendo `user_id: null` ao lado**, preservou o INSERT direto em
+`send_queue` (a violação da porta única) e preservou o `DELETE` em `deals`. O código que
+ficou é o meu; os tipos, os dele.
+
+É o padrão de sempre com essa plataforma: ela é o executor do commit, não a autora. Toda
+mudança dela precisa ser conferida uma a uma.
+
 ### Próximo ciclo
 
 - Portar as edge functions dos doadores para chamarem as RPCs em vez de escreverem
