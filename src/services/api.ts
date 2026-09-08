@@ -1332,10 +1332,10 @@ export const api = {
   sendMessage: async (conversationId: string, content: string): Promise<string> => {
     console.log(`[API] Sending message to conversation ${conversationId}`);
 
-    // Get conversation to find contact_id
+    // Get conversation to find contact_id and workspace_id
     const { data: conversation, error: convError } = await supabase
       .from('conversations')
-      .select('contact_id')
+      .select('contact_id, workspace_id')
       .eq('id', conversationId)
       .single();
 
@@ -1353,7 +1353,8 @@ export const api = {
         type: 'text',
         from_type: 'human',
         status: 'processing',
-        sent_at: new Date().toISOString()
+        sent_at: new Date().toISOString(),
+        workspace_id: conversation.workspace_id
       })
       .select('id')
       .single();
@@ -1375,7 +1376,8 @@ export const api = {
         from_type: 'human',
         message_type: 'text',
         priority: 2, // Higher priority for human messages
-        message_id: msgData.id  // Reference to the pre-created message
+        message_id: msgData.id,  // Reference to the pre-created message
+        workspace_id: conversation.workspace_id
       });
 
     if (sendError) {
