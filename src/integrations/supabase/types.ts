@@ -4279,8 +4279,11 @@ export type Database = {
           p_channel_id?: string
           p_contact_id: string
           p_content: string
+          p_conversation_id?: string
           p_dedupe_key: string
+          p_from_type?: string
           p_media_url?: string
+          p_message_id?: string
           p_message_type?: string
           p_origin: string
           p_origin_id?: string
@@ -4404,6 +4407,16 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      inbox_send_message: {
+        Args: {
+          p_content: string
+          p_conversation_id: string
+          p_dedupe_key: string
+          p_media_url?: string
+          p_message_type?: string
+        }
+        Returns: Json
       }
       is_workspace_admin: {
         Args: { _user_id?: string; _workspace_id: string }
