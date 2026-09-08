@@ -1557,7 +1557,8 @@ export const api = {
         color: tag.color,
         category: tag.category,
         is_active: true,
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
