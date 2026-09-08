@@ -885,7 +885,8 @@ export const api = {
         is_active: true,
         is_ai_managed: stage.isAiManaged || false,
         ai_trigger_criteria: stage.aiTriggerCriteria || null,
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -1214,6 +1215,7 @@ export const api = {
         description: activity.description,
         scheduled_at: activity.scheduledAt,
         created_by: activity.createdBy,
+        workspace_id: await currentWorkspaceId(),
       })
       .select()
       .single();
