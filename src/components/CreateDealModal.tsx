@@ -37,6 +37,7 @@ import { cn } from '../lib/utils';
 import { api } from '../services/api';
 import { Contact, TeamMember } from '../types';
 import { supabase } from '@/integrations/supabase/client';
+import { currentWorkspaceId } from '@/services/workspace';
 import { toast } from 'sonner';
 
 // Schema para contato existente
@@ -173,45 +174,40 @@ export const CreateDealModal: React.FC<CreateDealModalProps> = ({
 
       // Se for novo contato, criar primeiro
       if (data.contact_mode === 'new') {
-        // Verificar se telefone já existe
-        const { data: existingContact } = await supabase
-          .from('contacts')
-          .select('id')
-          .eq('phone_number', data.new_contact_phone)
-          .maybeSingle();
+        // Resolve o contato pela porta única. A busca antiga comparava
+        // phone_number cru, então "+55 11 91234-5678" e "5511912345678" não se
+        // encontravam e o mesmo decisor entrava duas vezes. A RPC normaliza
+        // para E.164 e resolve pela chave natural (workspace_id, phone_e164):
+        // se já existe, devolve o mesmo contato em vez de criar outro.
+        const workspaceId = await currentWorkspaceId();
 
-        if (existingContact) {
-          toast.error('Já existe um contato com este telefone');
-          setIsSubmitting(false);
-          return;
-        }
+        const { data: resolvedContactId, error: contactError } = await (supabase as any).rpc(
+          'flow_upsert_contact',
+          {
+            p_workspace_id: workspaceId,
+            p_name: data.new_contact_name,
+            p_phone: data.new_contact_phone,
+            p_email: data.new_contact_email || null,
+            p_source: 'crm_manual',
+          },
+        );
 
-        // Criar novo contato (o trigger NÃO será acionado porque inserimos is_blocked = false explicitamente)
-        const { data: newContact, error: contactError } = await supabase
-          .from('contacts')
-          .insert({
-            name: data.new_contact_name,
-            phone_number: data.new_contact_phone,
-            email: data.new_contact_email || null,
-          })
-          .select('id')
-          .single();
-
-        if (contactError || !newContact) {
+        if (contactError || !resolvedContactId) {
           console.error('Error creating contact:', contactError);
           toast.error('Erro ao criar contato');
           setIsSubmitting(false);
           return;
         }
 
-        contactId = newContact.id;
+        contactId = resolvedContactId as string;
         toast.success('Contato criado com sucesso!');
 
-        // Deletar deal criado automaticamente pelo trigger (se existir)
-        await supabase
-          .from('deals')
-          .delete()
-          .eq('contact_id', contactId);
+        // Aqui existia um DELETE em deals para limpar a oportunidade que o
+        // trigger auto_create_deal_on_contact criava sozinha. O trigger foi
+        // removido (ver migration 20260908200005): a criação de deal tem um
+        // dono só, crm_ensure_deal(). O DELETE não só virou desnecessário como
+        // era perigoso — apagava QUALQUER deal aberto do contato, inclusive um
+        // legítimo, quando o contato já existia.
       }
 
       // Parse tags

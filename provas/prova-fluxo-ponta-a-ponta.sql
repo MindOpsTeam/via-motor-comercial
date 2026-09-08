@@ -9,7 +9,7 @@
 -- para o banco desfazer tudo. O texto do erro é o resultado.
 --
 -- Como rodar:  psql ... -f provas/prova-fluxo-ponta-a-ponta.sql
--- Esperado:    ERROR: PROVA_FLUXO {...todas as asserções true...}
+-- Esperado:    ERROR: PROVA_FLUXO {...as 15 asserções true...}
 -- ============================================================================
 do $$
 declare
@@ -18,7 +18,8 @@ declare
   in1 jsonb; in2 jsonb; deal uuid; est2 uuid; wh1 boolean; wh2 boolean;
   n_emp int; n_ct int; n_enr_tot int; n_enr_ativ int; n_snd int; n_msg int;
   n_ativ int; n_deal int; q_canc int; etapa text; n_jornada int;
-  ws2 uuid; ct_outro uuid; vaz int; r jsonb;
+  ws2 uuid; ct_outro uuid; vaz int;
+  blq uuid; snd_blq uuid; n_fila_pos_bloq int; ib1 uuid; ib2 uuid; n_inbox int; r jsonb;
 begin
   insert into public.workspaces (name, slug, status)
     values ('PROVA', 'prova-'||gen_random_uuid(), 'active') returning id into ws;
@@ -81,6 +82,21 @@ begin
   ct_outro := public.flow_upsert_contact(ws2,'Outra Joana','+5511912345678');
   select count(*) into vaz from public.v_flow_pipeline where workspace_id=ws2 and contact_id=ct1;
 
+  -- N. BLOQUEIO: a automação para; o humano do inbox continua podendo falar
+  blq := public.flow_upsert_contact(ws,'Bloqueado','+5511988887777');
+  perform public.flow_enroll_followup(seq, blq);
+  perform public.contact_block(blq, 'pediu para parar');
+  snd_blq := public.flow_enqueue_send(ws, blq, 'automatica', 'followup', 'bl:1');
+  select count(*) into n_fila_pos_bloq from public.send_queue
+   where workspace_id=ws and contact_id=blq and status='pending';
+
+  -- O. INBOX: dois cliques no mesmo texto viram um envio só (porta única do humano)
+  ib1 := public.flow_enqueue_send(ws, ct1, 'Bom dia!', 'inbox', 'inbox:abc', null, 'text',
+           null, now(), null, 'human', (in1->>'conversation_id')::uuid);
+  ib2 := public.flow_enqueue_send(ws, ct1, 'Bom dia!', 'inbox', 'inbox:abc', null, 'text',
+           null, now(), null, 'human', (in1->>'conversation_id')::uuid);
+  select count(*) into n_inbox from public.send_queue where workspace_id=ws and origin='inbox';
+
   r := jsonb_build_object(
     'A_empresa_idempotente',           (n_emp=1 and emp1=emp2),
     'B_contato_3_formatos_1_registro', (n_ct=1 and ct1=ct2 and ct2=ct3),
@@ -95,9 +111,11 @@ begin
     'K_inbound_reconheceu_o_contato',  ((in1->>'contact_id')::uuid = ct1),
     'L_etapa_no_fluxo',                etapa,
     'M_fronteira_entre_workspaces',    (ct_outro <> ct1 and vaz = 0),
+    'N_bloqueio_para_automacao',       (snd_blq is null and n_fila_pos_bloq = 0),
+    'O_inbox_humano_dedupe',           (n_inbox = 1 and ib1 = ib2 and ib1 is not null),
     'medidas', jsonb_build_object('empresas',n_emp,'contatos',n_ct,'fila',n_snd,'mensagens',n_msg,
       'cadencias_ativas',n_enr_ativ,'cancelados',q_canc,'deals',n_deal,'atividades',n_ativ,
-      'eventos_jornada',n_jornada));
+      'eventos_jornada',n_jornada,'fila_inbox',n_inbox));
 
   raise exception 'PROVA_FLUXO %', r::text;
 end $$;

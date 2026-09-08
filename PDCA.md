@@ -18,7 +18,7 @@ Garantir duas coisas no banco antes de qualquer tela:
 
 ### Fiz
 
-Seis blocos, aplicados um por chamada no banco real (`jcxuzwn…`):
+Sete blocos, aplicados um por chamada no banco real (`jcxuzwn…`):
 
 | Migration | O que entrega |
 |---|---|
@@ -28,12 +28,13 @@ Seis blocos, aplicados um por chamada no banco real (`jcxuzwn…`):
 | `…200004_rls_por_dominio` | 177 policies em 49 tabelas, geradas por domínio (negócio / máquina / pessoal) |
 | `…200005_autoridade_de_campo_triggers` | remove a dupla escrita de `deals`; deduplica triggers de `updated_at` |
 | `…200006_vocabulario_de_atividade` | vocabulário de `deal_activities.type` que o sistema também consegue usar |
+| `…200007_porta_unica_aceita_humano` | `flow_enqueue_send` passa a aceitar `from_type`; nasce `inbox_send_message` |
 
 ### O que a prova mostrou
 
 `provas/prova-fluxo-ponta-a-ponta.sql`, executada no banco real, com rollback.
 
-**Resultado: 13 de 13 asserções verdes.**
+**Resultado: 15 de 15 asserções verdes.**
 
 ```json
 {
@@ -50,9 +51,11 @@ Seis blocos, aplicados um por chamada no banco real (`jcxuzwn…`):
   "K_inbound_reconheceu_o_contato":  true,
   "L_etapa_no_fluxo":                "crm",
   "M_fronteira_entre_workspaces":    true,
+  "N_bloqueio_para_automacao":       true,
+  "O_inbox_humano_dedupe":           true,
   "medidas": { "empresas": 1, "contatos": 1, "fila": 1, "mensagens": 1,
                "cadencias_ativas": 0, "cancelados": 1, "deals": 1,
-               "atividades": 1, "eventos_jornada": 6 }
+               "atividades": 1, "eventos_jornada": 6, "fila_inbox": 1 }
 }
 ```
 
@@ -70,7 +73,8 @@ Depois do `RAISE EXCEPTION` o banco voltou a zero — conferido: 0 contatos, 0 d
 
 ### O que mudei por causa da prova
 
-Três defeitos que só apareceram porque a prova rodou contra o banco real:
+Cinco defeitos que só apareceram porque a prova rodou contra o banco real e porque os
+tipos gerados passaram a bater com o schema:
 
 **1. `normalize_phone` transformava telefone fixo em celular.**
 A primeira versão inseria o nono dígito em qualquer número de 8 dígitos locais, então
@@ -96,6 +100,31 @@ conseguia registrar a movimentação de estágio e o funil andava sem deixar ras
 Vocabulário ampliado com os tipos que o fluxo grava: `stage_change`, `won`, `lost`,
 `inbound`, `followup_sent`, `system`.
 
+**4. O inbox escrevia direto na fila, por fora da porta única.**
+`api.ts` fazia dois INSERTs em sequência — um em `messages`, outro em `send_queue` — sem
+`workspace_id` e **sem chave de deduplicação**. Dois cliques no botão de enviar mandavam a
+mesma mensagem duas vezes para o cliente; e se o segundo INSERT falhasse, ficava mensagem
+registrada que nunca sairia.
+
+A causa não era só o front: `flow_enqueue_send()` fixava `from_type = 'nina'`, então o inbox
+**não tinha como** usar a porta única e por isso a contornava. Corrigir o front sem corrigir
+a porta só empurraria o problema. Agora a porta aceita `from_type`, e `inbox_send_message()`
+grava mensagem e fila numa transação só, com `dedupe_key` derivada do conteúdo.
+
+Junto veio uma decisão de produto: contato bloqueado não recebe automação, mas o operador
+humano que abre a conversa e escreve à mão continua podendo falar. O bloqueio serve para
+parar robô, não para amordaçar quem atende.
+
+**5. Um `DELETE` em `deals` que teria apagado oportunidade legítima.**
+`CreateDealModal.tsx` rodava `delete from deals where contact_id = X` logo depois de criar o
+contato, para limpar o deal que o trigger removido no item 2 criava sozinho. Com o trigger
+fora, o `DELETE` virou não só desnecessário como perigoso: quando o contato já existia, ele
+apagava o deal aberto que já estivesse lá. Removido.
+
+No mesmo arquivo, a verificação de duplicidade comparava `phone_number` **cru** — então
+`+55 11 91234-5678` e `5511912345678` não se encontravam e o mesmo decisor entrava duas
+vezes. Passou a usar `flow_upsert_contact()`, que resolve pela chave natural normalizada.
+
 ### Achado registrado, ainda sem ação
 
 Sete tabelas chegaram do remix com RLS **ligada e zero policies** — na prática
@@ -106,6 +135,16 @@ front: `send_queue`, `nina_processing_queue`, `message_processing_queue`,
 ficaram no domínio máquina (só `service_role`, com uma exceção deliberada de leitura da
 fila de envio para o operador entender por que uma mensagem não saiu) e as demais
 entraram no domínio negócio.
+
+### Verificação de front
+
+`tsc --noEmit`: **0 erros**. `npm run build`: **verde**.
+
+Os tipos foram regerados a partir do schema real (57 tabelas, 3 views, 32 funções, 11 enums,
+141 relacionamentos), não do que o Lovable devolveu — ele sincronizou o commit mas não
+regenerou `types.ts`. Foram esses tipos que denunciaram os defeitos 4 e 5: com o
+`workspace_id` obrigatório, o compilador apontou exatamente onde o front ainda escrevia
+com a fronteira antiga.
 
 ### Próximo ciclo
 

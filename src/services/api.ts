@@ -14,6 +14,19 @@ import {
 } from '../types';
 
 // Helper function to get current user ID
+/**
+ * Hash curto e estável do conteúdo, usado na chave de deduplicação de envio.
+ * Dois cliques no mesmo texto, na mesma conversa, produzem a mesma chave — e a
+ * porta única devolve o envio que já existe em vez de criar outro.
+ */
+async function hashContent(text: string): Promise<string> {
+  const bytes = new TextEncoder().encode(text);
+  const digest = await crypto.subtle.digest('SHA-256', bytes);
+  return Array.from(new Uint8Array(digest).slice(0, 8))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('');
+}
+
 const getCurrentUserId = async (): Promise<string> => {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) throw new Error('User not authenticated');
@@ -400,7 +413,7 @@ export const api = {
     function_id?: string;
     weight?: number;
   }): Promise<TeamMember> => {
-    const userId = await getCurrentUserId();
+    const workspaceId = await currentWorkspaceId();
     
     const { data, error } = await supabase
       .from('team_members')
@@ -412,7 +425,7 @@ export const api = {
         function_id: member.function_id,
         weight: member.weight || 1,
         status: 'invited',
-        user_id: null
+        workspace_id: workspaceId
       })
       .select()
       .single();
@@ -495,7 +508,7 @@ export const api = {
    * Create team
    */
   createTeam: async (team: { name: string; description?: string; color?: string }) => {
-    const userId = await getCurrentUserId();
+    const workspaceId = await currentWorkspaceId();
     
     const { data, error } = await supabase
       .from('teams')
@@ -503,7 +516,7 @@ export const api = {
         name: team.name,
         description: team.description,
         color: team.color || '#0A1F3B',
-        user_id: null
+        workspace_id: workspaceId
       })
       .select()
       .single();
@@ -568,14 +581,14 @@ export const api = {
    * Create team function
    */
   createTeamFunction: async (func: { name: string; description?: string }) => {
-    const userId = await getCurrentUserId();
+    const workspaceId = await currentWorkspaceId();
     
     const { data, error } = await supabase
       .from('team_functions')
       .insert({
         name: func.name,
         description: func.description,
-        user_id: null
+        workspace_id: workspaceId
       })
       .select()
       .single();
@@ -860,7 +873,7 @@ export const api = {
   },
 
   createPipelineStage: async (stage: { title: string; color: string; isAiManaged?: boolean; aiTriggerCriteria?: string }): Promise<any> => {
-    const userId = await getCurrentUserId();
+    const workspaceId = await currentWorkspaceId();
     
     // Get the highest position for all active stages
     const { data: stages } = await supabase
@@ -882,7 +895,7 @@ export const api = {
         is_active: true,
         is_ai_managed: stage.isAiManaged || false,
         ai_trigger_criteria: stage.aiTriggerCriteria || null,
-        user_id: null
+        workspace_id: workspaceId
       })
       .select()
       .single();
@@ -1196,12 +1209,17 @@ export const api = {
    */
   createDealActivity: async (activity: {
     dealId: string;
-    type: 'note' | 'call' | 'email' | 'meeting' | 'task';
+    // Os cinco primeiros são o que uma pessoa registra; os demais o fluxo grava
+    // sozinho pelas RPCs. O vocabulário vive no check de deal_activities.type.
+    type: 'note' | 'call' | 'email' | 'meeting' | 'task'
+        | 'stage_change' | 'won' | 'lost' | 'inbound' | 'followup_sent' | 'system';
     title: string;
     description?: string;
     scheduledAt?: string;
     createdBy?: string;
   }): Promise<any> => {
+    const workspaceId = await currentWorkspaceId();
+
     const { data, error } = await supabase
       .from('deal_activities')
       .insert({
@@ -1211,6 +1229,7 @@ export const api = {
         description: activity.description,
         scheduled_at: activity.scheduledAt,
         created_by: activity.createdBy,
+        workspace_id: workspaceId,
       })
       .select()
       .single();
@@ -1339,46 +1358,29 @@ export const api = {
       throw new Error('Conversation not found');
     }
 
-    // First create the message record with status 'processing'
-    const { data: msgData, error: msgError } = await supabase
-      .from('messages')
-      .insert({
-        conversation_id: conversationId,
-        content: content,
-        type: 'text',
-        from_type: 'human',
-        status: 'processing',
-        sent_at: new Date().toISOString()
-      })
-      .select('id')
-      .single();
+    // Mensagem e fila numa transação só, pela porta única.
+    // Antes eram dois INSERTs soltos: se o segundo falhasse, ficava mensagem
+    // registrada que nunca seria enviada. E sem chave de deduplicação, dois
+    // cliques no botão mandavam a mesma coisa duas vezes para o cliente.
+    const dedupeKey = `inbox:${conversationId}:${await hashContent(content)}`;
 
-    if (msgError || !msgData) {
-      console.error('[API] Error creating message record:', msgError);
-      throw new Error('Failed to create message record');
-    }
-
-    console.log('[API] Message created with ID:', msgData.id);
-
-    // Then queue message for sending WITH message_id reference
-    const { error: sendError } = await supabase
-      .from('send_queue')
-      .insert({
-        conversation_id: conversationId,
-        contact_id: conversation.contact_id,
-        content: content,
-        from_type: 'human',
-        message_type: 'text',
-        priority: 2, // Higher priority for human messages
-        message_id: msgData.id  // Reference to the pre-created message
-      });
+    const { data: sent, error: sendError } = await (supabase as any).rpc('inbox_send_message', {
+      p_conversation_id: conversationId,
+      p_content: content,
+      p_dedupe_key: dedupeKey,
+    });
 
     if (sendError) {
-      console.error('[API] Error queuing message:', sendError);
+      console.error('[API] Error sending message:', sendError);
       throw sendError;
     }
 
-    console.log('[API] Message queued for sending');
+    const msgData = { id: sent?.message_id as string };
+    if (sent?.duplicada) {
+      console.log('[API] Envio ignorado: mesma mensagem já estava na fila');
+    } else {
+      console.log('[API] Message queued for sending:', msgData.id);
+    }
 
     // Trigger whatsapp-sender to process the queue immediately
     try {
@@ -1540,7 +1542,7 @@ export const api = {
    * Create new tag definition
    */
   createTagDefinition: async (tag: { key: string; label: string; color: string; category: string }) => {
-    const userId = await getCurrentUserId();
+    const workspaceId = await currentWorkspaceId();
     
     const { data, error } = await supabase
       .from('tag_definitions')
@@ -1550,7 +1552,7 @@ export const api = {
         color: tag.color,
         category: tag.category,
         is_active: true,
-        user_id: null
+        workspace_id: workspaceId
       })
       .select()
       .single();
