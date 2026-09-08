@@ -412,7 +412,8 @@ export const api = {
         function_id: member.function_id,
         weight: member.weight || 1,
         status: 'invited',
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -503,7 +504,8 @@ export const api = {
         name: team.name,
         description: team.description,
         color: team.color || '#0A1F3B',
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -575,7 +577,8 @@ export const api = {
       .insert({
         name: func.name,
         description: func.description,
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -882,7 +885,8 @@ export const api = {
         is_active: true,
         is_ai_managed: stage.isAiManaged || false,
         ai_trigger_criteria: stage.aiTriggerCriteria || null,
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -1211,6 +1215,7 @@ export const api = {
         description: activity.description,
         scheduled_at: activity.scheduledAt,
         created_by: activity.createdBy,
+        workspace_id: await currentWorkspaceId(),
       })
       .select()
       .single();
@@ -1327,10 +1332,10 @@ export const api = {
   sendMessage: async (conversationId: string, content: string): Promise<string> => {
     console.log(`[API] Sending message to conversation ${conversationId}`);
 
-    // Get conversation to find contact_id
+    // Get conversation to find contact_id and workspace_id
     const { data: conversation, error: convError } = await supabase
       .from('conversations')
-      .select('contact_id')
+      .select('contact_id, workspace_id')
       .eq('id', conversationId)
       .single();
 
@@ -1348,7 +1353,8 @@ export const api = {
         type: 'text',
         from_type: 'human',
         status: 'processing',
-        sent_at: new Date().toISOString()
+        sent_at: new Date().toISOString(),
+        workspace_id: conversation.workspace_id
       })
       .select('id')
       .single();
@@ -1370,7 +1376,8 @@ export const api = {
         from_type: 'human',
         message_type: 'text',
         priority: 2, // Higher priority for human messages
-        message_id: msgData.id  // Reference to the pre-created message
+        message_id: msgData.id,  // Reference to the pre-created message
+        workspace_id: conversation.workspace_id
       });
 
     if (sendError) {
@@ -1550,7 +1557,8 @@ export const api = {
         color: tag.color,
         category: tag.category,
         is_active: true,
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();

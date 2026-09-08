@@ -37,6 +37,7 @@ import { cn } from '../lib/utils';
 import { api } from '../services/api';
 import { Contact, TeamMember } from '../types';
 import { supabase } from '@/integrations/supabase/client';
+import { currentWorkspaceId } from '@/services/workspace';
 import { toast } from 'sonner';
 
 // Schema para contato existente
@@ -193,6 +194,7 @@ export const CreateDealModal: React.FC<CreateDealModalProps> = ({
             name: data.new_contact_name,
             phone_number: data.new_contact_phone,
             email: data.new_contact_email || null,
+            workspace_id: await currentWorkspaceId(),
           })
           .select('id')
           .single();
