@@ -412,7 +412,8 @@ export const api = {
         function_id: member.function_id,
         weight: member.weight || 1,
         status: 'invited',
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -503,7 +504,8 @@ export const api = {
         name: team.name,
         description: team.description,
         color: team.color || '#0A1F3B',
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
@@ -575,7 +577,8 @@ export const api = {
       .insert({
         name: func.name,
         description: func.description,
-        user_id: null
+        user_id: null,
+        workspace_id: await currentWorkspaceId()
       })
       .select()
       .single();
