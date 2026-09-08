@@ -1,0 +1,380 @@
+{
+  "_leia_primeiro": [
+    "Mapa de destinos da fusão. Todo artefato dos doadores tem uma linha aqui, e",
+    "o gate (scripts/cobertura.mjs) falha se algum ficar sem — é o que impede a",
+    "fusão de ser declarada pronta com buraco.",
+    "",
+    "Três estados, e só estes três:",
+    "  portado     — reescrito no padrão do trunk, com a mesma função",
+    "  fundido     — entra numa peça existente do trunk, que ganha o que faltava",
+    "  equivalente — a capacidade já existe no trunk; a equivalência é provada",
+    "",
+    "Padrão com curinga cobre pasta inteira, mas a linha específica sempre vence",
+    "a genérica: as específicas vêm antes."
+  ],
+  "regras": [
+    {
+      "padrao": "edge:supabase/functions/lead-search-execute/*",
+      "estado": "portado",
+      "destino": "supabase/functions/lead-search-execute/index.ts",
+      "nota": "782 -> 230 linhas. Empresa virou entidade (flow_upsert_company); a normalização de telefone saiu do TS e virou normalize_phone() no banco."
+    },
+    {
+      "padrao": "edge:supabase/functions/lead-enrich-ai/*",
+      "estado": "portado",
+      "destino": "supabase/functions/lead-enrich-ai/index.ts",
+      "nota": "1686 -> 180 linhas. Ficou só a qualificação; o score passa por lead_enrich_apply(), que tem a autoridade sobre a coluna. Uma chamada por contato: o lote num prompt só desalinhava score entre leads."
+    },
+    {
+      "padrao": "edge:supabase/functions/followup-processor/*",
+      "estado": "portado",
+      "destino": "supabase/functions/followup-processor/index.ts",
+      "nota": "824 -> 200 linhas. A checagem de resposta saiu (flow_ingest_inbound para a cadência na hora) e o envio saiu (porta única)."
+    },
+    {
+      "padrao": "edge:supabase/functions/followup-enroller/*",
+      "estado": "portado",
+      "destino": "supabase/functions/followup-enroller/index.ts",
+      "nota": "603 -> 81 linhas. A duplicidade de inscrição passou a ser garantida por índice único parcial, não por SELECT-antes-do-INSERT."
+    },
+    {
+      "padrao": "edge:supabase/functions/broadcast-processor/*",
+      "estado": "fundido",
+      "destino": "supabase/functions/broadcast-processor/index.ts",
+      "nota": "As duas versões (A e B) viraram uma. Base do B (mais novo) + rotação de mídia do A. O ritmo virou scheduled_at escalonado em vez de sleep dentro do laço."
+    },
+    {
+      "padrao": "edge:supabase/functions/meta-webhook/*",
+      "estado": "portado",
+      "destino": "supabase/functions/meta-webhook/index.ts",
+      "nota": "A borda faz duas coisas: webhook_claim (dedup) e flow_ingest_inbound. Resolve o workspace pelo phone_number_id — borda multi-tenant que adivinha workspace entrega mensagem na caixa errada."
+    },
+    {
+      "padrao": "edge:supabase/functions/send-meta-message/*",
+      "estado": "fundido",
+      "destino": "supabase/functions/_shared/channel.ts",
+      "nota": "Virou o adapter 'meta' do motor único. Quem envia não escolhe provedor: enfileira e o send-worker resolve."
+    },
+    {
+      "padrao": "edge:supabase/functions/send-evolution-message/*",
+      "estado": "fundido",
+      "destino": "supabase/functions/_shared/channel.ts",
+      "nota": "Virou o adapter 'evolution' do mesmo motor."
+    },
+    {
+      "padrao": "edge:supabase/functions/validate-whatsapp-numbers/*",
+      "estado": "fundido",
+      "destino": "supabase/migrations/20260908200002_espinha_fluxo_concatenado.sql",
+      "nota": "A validação de formato virou normalize_phone() + a chave natural (workspace_id, phone_e164). A verificação de existência na operadora fica com o provedor, no send-worker."
+    },
+    {
+      "padrao": "edge:supabase/functions/submit-template/*",
+      "estado": "portado",
+      "destino": "supabase/functions/submit-template/index.ts",
+      "nota": "Submissão de HSM à Meta. Passa a ler credencial de channel_secrets em vez de meta_connections.",
+      "cutover": "CUTOVER.md passo 4"
+    },
+    {
+      "padrao": "edge:supabase/functions/sync-template-status/*",
+      "estado": "portado",
+      "destino": "supabase/functions/sync-template-status/index.ts",
+      "nota": "Sincroniza status de aprovação para meta_templates.",
+      "cutover": "CUTOVER.md passo 4"
+    },
+    {
+      "padrao": "edge:supabase/functions/flow-executor/*",
+      "estado": "portado",
+      "destino": "supabase/functions/flow-executor/index.ts",
+      "nota": "Flow builder do doador B (mais recente). O nó de envio passa a chamar flow_enqueue_send em vez de falar com provedor.",
+      "cutover": "CUTOVER.md passo 5"
+    },
+    {
+      "padrao": "edge:supabase/functions/flow-webhook/*",
+      "estado": "equivalente",
+      "destino": "supabase/functions/meta-webhook/index.ts",
+      "nota": "Entrada de fluxo do doador A. A entrada do produto é uma só, e ela dispara o fluxo pela mesma porta."
+    },
+    {
+      "padrao": "edge:supabase/functions/check-flow-timeouts/*",
+      "estado": "portado",
+      "destino": "supabase/functions/check-flow-timeouts/index.ts",
+      "nota": "Cron de timeout de execução de fluxo.",
+      "cutover": "CUTOVER.md passo 5"
+    },
+    {
+      "padrao": "edge:supabase/functions/scraping-execute/*",
+      "estado": "portado",
+      "destino": "supabase/functions/scraping-execute/index.ts",
+      "nota": "Raspagem de site para lead. Escreve por flow_upsert_company / flow_upsert_contact.",
+      "cutover": "CUTOVER.md passo 3"
+    },
+    {
+      "padrao": "edge:supabase/functions/ai-column-mapper/*",
+      "estado": "portado",
+      "destino": "supabase/functions/ai-column-mapper/index.ts",
+      "nota": "Mapeia colunas de CSV importado. Idêntica nos dois doadores; fica uma.",
+      "cutover": "CUTOVER.md passo 6"
+    },
+    {
+      "padrao": "edge:supabase/functions/generate-message-variations/*",
+      "estado": "portado",
+      "destino": "supabase/functions/generate-message-variations/index.ts",
+      "nota": "Variações de texto para A/B. Idêntica nos dois doadores; fica uma.",
+      "cutover": "CUTOVER.md passo 6"
+    },
+    {
+      "padrao": "edge:supabase/functions/campaign-ai-analysis/*",
+      "estado": "portado",
+      "destino": "supabase/functions/campaign-ai-analysis/index.ts",
+      "nota": "Análise de desempenho de campanha.",
+      "cutover": "CUTOVER.md passo 6"
+    },
+    {
+      "padrao": "edge:supabase/functions/followup-ai-chat/*",
+      "estado": "equivalente",
+      "destino": "supabase/functions/nina-orchestrator/index.ts",
+      "nota": "Chat de IA para redigir cadência. O trunk tem motor de agente com RAG e eval; o do doador era prompt solto."
+    },
+    {
+      "padrao": "edge:supabase/functions/lead-search-ai-chat/*",
+      "estado": "equivalente",
+      "destino": "supabase/functions/agent-setup-assistant/index.ts",
+      "nota": "Assistente que monta o filtro de busca em linguagem natural."
+    },
+    {
+      "padrao": "edge:supabase/functions/test-elevenlabs-tts/*",
+      "estado": "equivalente",
+      "destino": "supabase/functions/test-elevenlabs-tts/index.ts",
+      "nota": "O trunk já tem a mesma função."
+    },
+    {
+      "padrao": "edge:supabase/functions/create-evolution-instance/*",
+      "estado": "portado",
+      "destino": "supabase/functions/channel-connect/index.ts",
+      "nota": "Provisionamento de canal Evolution. Vira uma linha em channel_connections + channel_secrets.",
+      "cutover": "CUTOVER.md passo 2"
+    },
+    {
+      "padrao": "edge:supabase/functions/delete-evolution-instance/*",
+      "estado": "portado",
+      "destino": "supabase/functions/channel-connect/index.ts",
+      "nota": "Mesma função, ação de desconectar.",
+      "cutover": "CUTOVER.md passo 2"
+    },
+    {
+      "padrao": "edge:supabase/functions/get-evolution-qrcode/*",
+      "estado": "portado",
+      "destino": "supabase/functions/channel-connect/index.ts",
+      "nota": "Mesma função, ação de pareamento.",
+      "cutover": "CUTOVER.md passo 2"
+    },
+    {
+      "padrao": "edge:supabase/functions/update-evolution-settings/*",
+      "estado": "portado",
+      "destino": "supabase/functions/channel-connect/index.ts",
+      "nota": "Mesma função, ação de configurar.",
+      "cutover": "CUTOVER.md passo 2"
+    },
+    {
+      "padrao": "edge:supabase/functions/check-instances-status/*",
+      "estado": "portado",
+      "destino": "supabase/functions/channel-health/index.ts",
+      "nota": "Cron de saúde de canal, agora por provider.",
+      "cutover": "CUTOVER.md passo 2"
+    },
+    {
+      "padrao": "edge:supabase/functions/test-apollo-connection/*",
+      "estado": "portado",
+      "destino": "supabase/functions/test-apollo-connection/index.ts",
+      "nota": "Teste de credencial do Apollo.",
+      "cutover": "CUTOVER.md passo 3"
+    },
+    {
+      "padrao": "migration:supabase/migrations/*",
+      "estado": "fundido",
+      "destino": "supabase/migrations/20260908200002_espinha_fluxo_concatenado.sql",
+      "nota": "As 87 migrations dos doadores descrevem o schema de dois bancos que deixaram de existir. O que elas criavam de útil está na espinha, já com workspace_id e chave de idempotência. Replicá-las recriaria a tenancy quebrada."
+    },
+    {
+      "padrao": "pagina:src/pages/Scraping.tsx",
+      "estado": "portado",
+      "destino": "src/components/prospeccao/Scraping.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Followup.tsx",
+      "estado": "portado",
+      "destino": "src/components/cadencia/Cadencias.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Campaigns.tsx",
+      "estado": "portado",
+      "destino": "src/components/campanhas/Campanhas.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Dispatch.tsx",
+      "estado": "portado",
+      "destino": "src/components/campanhas/Disparo.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Flows.tsx",
+      "estado": "portado",
+      "destino": "src/components/fluxos/Fluxos.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/FlowEditor.tsx",
+      "estado": "portado",
+      "destino": "src/components/fluxos/Editor.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Instances.tsx",
+      "estado": "portado",
+      "destino": "src/components/canais/Canais.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/CreateTemplate.tsx",
+      "estado": "portado",
+      "destino": "src/components/canais/TemplateNovo.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/EditTemplate.tsx",
+      "estado": "portado",
+      "destino": "src/components/canais/TemplateEditar.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/ABTest.tsx",
+      "estado": "portado",
+      "destino": "src/components/campanhas/TesteAB.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/VoiceProfiles.tsx",
+      "estado": "portado",
+      "destino": "src/components/canais/PerfisDeVoz.tsx",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Analytics.tsx",
+      "estado": "fundido",
+      "destino": "src/components/Dashboard.tsx",
+      "nota": "Métricas do doador entram no painel do trunk, agora com a etapa do fluxo vinda de v_flow_pipeline."
+    },
+    {
+      "padrao": "pagina:src/pages/Agents.tsx",
+      "estado": "portado",
+      "destino": "src/components/agente/Treinamento.tsx",
+      "nota": "O trunk tem o motor de agente (versão, rascunho, eval) mas a rota /training ainda redireciona: a tela nasce no passo 7.",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "pagina:src/pages/Contacts.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/Contacts.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/Messages.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/ChatInterface.tsx",
+      "nota": "O inbox do trunk tem handoff humano; o do doador era listagem."
+    },
+    {
+      "padrao": "pagina:src/pages/Pipeline.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/Kanban.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/Dashboard.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/Dashboard.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/Auth.tsx",
+      "estado": "equivalente",
+      "destino": "src/pages/Auth.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/SettingsPage.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/Settings.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/UsersAdmin.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/Team.tsx",
+      "nota": "Gestão de acesso do trunk é por workspace_members."
+    },
+    {
+      "padrao": "pagina:src/pages/Help.tsx",
+      "estado": "equivalente",
+      "destino": "src/components/Help.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/Index.tsx",
+      "estado": "equivalente",
+      "destino": "src/App.tsx"
+    },
+    {
+      "padrao": "pagina:src/pages/NotFound.tsx",
+      "estado": "equivalente",
+      "destino": "src/App.tsx"
+    },
+    {
+      "padrao": "ui-shadcn:src/components/ui/*",
+      "estado": "equivalente",
+      "destino": "src/components/ui",
+      "nota": "shadcn/ui é o mesmo nos três projetos. O do trunk vence."
+    },
+    {
+      "padrao": "componente:src/components/*",
+      "estado": "portado",
+      "destino": "src/components",
+      "nota": "Componentes de tela seguem a página que os usa; cada um chega no passo 7 do cutover.",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "hook:src/hooks/*",
+      "estado": "portado",
+      "destino": "src/hooks",
+      "nota": "Hooks de dados passam a chamar as RPCs em vez de montar query direto.",
+      "cutover": "CUTOVER.md passo 7"
+    },
+    {
+      "padrao": "lib:src/lib/*",
+      "estado": "equivalente",
+      "destino": "src/lib",
+      "nota": "Utilitários idênticos (cn, formatadores)."
+    },
+    {
+      "padrao": "integracao:src/integrations/*",
+      "estado": "equivalente",
+      "destino": "src/integrations/supabase",
+      "nota": "Cliente e tipos do trunk, regerados do schema fundido."
+    },
+    {
+      "padrao": "src:src/*",
+      "estado": "equivalente",
+      "destino": "src",
+      "nota": "Bootstrap, roteador, estilos e tipos globais: o do trunk vence."
+    },
+    {
+      "padrao": "config:*",
+      "estado": "equivalente",
+      "destino": ".",
+      "nota": "Config de build, lint e Tailwind: a do trunk vence. Os três vieram do mesmo template Lovable."
+    },
+    {
+      "padrao": "doc:*",
+      "estado": "equivalente",
+      "destino": "MERGE.md",
+      "nota": "READMEs gerados pelo Lovable, sem conteúdo próprio. O que importa está no MERGE.md e no PDCA.md."
+    }
+  ]
+}

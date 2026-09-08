@@ -1,0 +1,2672 @@
+[
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/AppLayout.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/AppSidebar.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/NavLink.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/PlaceholderPage.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/ProtectedRoute.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/StatCard.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/StatusBadge.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CampaignDetails.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CampaignDispatchSettings.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CampaignWizard.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CsvUploader.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/MessageEditor.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/contacts/ContactImportDialog.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/ConditionConfig.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/EdgeContextMenu.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/FlowNodeCard.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/FlowNodeConfigPanel.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/HelperLines.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/InsertNodeMenu.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/InsertableEdge.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/NodeContextMenu.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/useHelperLines.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/flow/useUndoRedo.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/followup/FollowupChat.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/followup/LogsTab.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/followup/ManualSequenceEditor.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/followup/MonitorTab.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/followup/SequenceDetail.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/followup/SequencesList.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/instances/AddInstanceDialog.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/instances/WhatsAppInstancesManager.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/messages/TemplateVariationEditor.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/messages/WhatsAppPhonePreview.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/EditorAiButton.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/SlashRewriteCommand.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/extensions.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/serializer.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/onboarding/SetupWizard.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/onboarding/StepApollo.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/onboarding/StepElevenLabs.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/onboarding/StepEvolution.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/onboarding/StepFinish.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/onboarding/StepInstance.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/pipeline/CreateDealModal.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/pipeline/LostReasonModal.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/pipeline/PipelineSettingsModal.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/scraping/GenerateListDialog.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/scraping/LeadSearchChat.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/scraping/LeadSearchConfig.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/scraping/LeadSearchDetail.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "componente",
+  "caminho": "src/components/settings/ElevenLabsSettings.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "bun.lockb"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "components.json"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "eslint.config.js"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "index.html"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "package.json"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "postcss.config.js"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "public/favicon.ico"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "public/placeholder.svg"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "public/robots.txt"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "supabase/config.toml"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "tailwind.config.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "tsconfig.app.json"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "tsconfig.json"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "tsconfig.node.json"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "vite.config.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "config",
+  "caminho": "vitest.config.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "doc",
+  "caminho": "README.md"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/ai-column-mapper/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/broadcast-processor/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/campaign-ai-analysis/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/check-flow-timeouts/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/check-instances-status/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/create-evolution-instance/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/delete-evolution-instance/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/flow-executor/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/flow-webhook/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/followup-ai-chat/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/followup-enroller/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/followup-processor/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/generate-message-variations/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/get-evolution-qrcode/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/lead-enrich-ai/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/lead-search-ai-chat/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/lead-search-execute/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/scraping-execute/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/send-evolution-message/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/test-apollo-connection/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/test-elevenlabs-tts/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/update-evolution-settings/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "edge",
+  "caminho": "supabase/functions/validate-whatsapp-numbers/index.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/use-mobile.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/use-toast.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useAuth.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useBroadcasts.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useContacts.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useDispatchProfiles.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useFlows.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useFollowup.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useLeadSearches.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useMessageTemplates.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/usePipeline.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useScrapingJobs.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useVoiceProfiles.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "hook",
+  "caminho": "src/hooks/useWhatsAppInstances.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "integracao",
+  "caminho": "src/integrations/supabase/client.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "integracao",
+  "caminho": "src/integrations/supabase/types.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "lib",
+  "caminho": "src/lib/phoneUtils.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "lib",
+  "caminho": "src/lib/spintax.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "lib",
+  "caminho": "src/lib/utils.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228000506_3a660a7e-5391-4263-940f-e441fbbc7d52.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228002314_6d16d425-8092-4c67-a7c4-2dd486f18cce.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228003851_8a0e320a-c43d-41de-85bf-e4f4d71a8e5d.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228005247_530254dd-eadb-4cb7-835c-8bb04e1492bc.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228010328_9286bad6-9ad0-4c04-a953-84662db57924.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228010634_2004f87a-9ea7-4615-8356-7ff962dede20.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228011035_73a340d1-9767-4cd8-8907-1d8c9c6f3733.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228174751_95e0856e-8ca0-49ac-b630-cd7089acc0de.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228175728_3c4bb71f-98f7-43a2-8224-6627ba315b98.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228191820_b323302b-fe4b-4d6d-b935-46c52e21d18d.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228210209_9cdd60e1-b4ed-4f29-97f1-44c7eb6da8fd.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228222856_1ed7f4a6-a5a1-4d72-93fa-b80b1e94d462.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228224659_40b544d9-87a1-4160-9254-07bcfc41803b.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260301002235_d37986ff-4970-4b77-bd2f-2a0b9a61a73e.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260302125834_fc38f47c-a20f-4409-af6e-905681f424f2.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260302133525_a4a10096-5a76-4edf-a9d8-2eb1bbe74644.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303161930_7359a7ac-d718-4ec3-8182-e72e6b87334f.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303164145_357fbdcc-38aa-4c67-b393-9ed2f90ad563.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303173908_fb2847f5-a704-455c-85f7-52be101e9770.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303173927_445fb875-a577-4eba-b2bb-cd379ce5f66d.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303174118_f7cd9e42-91bf-4a8f-bea1-8d5624f41fb2.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303174638_169ee378-d5f1-4e1b-be93-c900bb3d2080.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304131903_89243503-2e34-4749-9400-672755304d51.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304141014_114561e9-7da0-4012-9e4b-42f9c4b1caef.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304141640_504d0264-246b-4c5a-8af5-308cb0c2034e.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304150324_d8998554-2c4f-4494-9188-960f727f83eb.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305131308_3d811d06-44c4-4975-8a26-0c3824e2646f.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305132619_fdfff8c2-cf4d-4246-b780-a8ddcfe86818.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305143623_abf6dd87-3b33-4923-98bd-269c59c12ba5.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305151500_d23e03f8-39e6-4128-b582-88eb5dd65c26.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305195135_7c8e23c5-2bcc-4353-9a67-9faa3b330bf7.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260306143409_e8582e2b-5e48-404f-a142-33b74a05b5e4.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260306151517_4d14e0a6-a567-402b-bb78-5052de225870.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260306172544_93e7679d-5c8e-47a6-9c71-520401a525d6.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260316132745_7720f12b-76c0-451c-aebb-cb356ae26639.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260316170623_d7466bb5-926c-4b90-bcdc-3feb6f44f425.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260327132406_94c46804-2477-44d8-a27e-3bb6246ca22b.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260328165719_be6c7895-6b34-44f2-a116-af5d2d1f8d21.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260328193941_68bf3630-ed2b-4b11-b00c-b44cd68e1ea2.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260328195034_d50d9dcc-800f-4fa5-8205-de6eb301a7d4.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260328195423_3d68dee7-a8dc-448a-80e4-5a17e268d159.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260406162531_c1126297-e177-4306-814f-fcffc7262c26.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260406165828_d0d387d2-f5ee-422d-b4b2-5d4a33111b51.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260413121826_f8a85f57-ddf0-498c-b3a2-d64dbdb36595.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260413122049_0ba99eb3-afa0-4318-a62f-50f60729a114.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260811181249_6089c121-3ea9-452b-89a9-ff7efa324688.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260811181309_a47485c3-33c1-4caa-90f7-911b88443636.sql"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/ABTest.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Agents.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Analytics.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Auth.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Campaigns.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Contacts.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Dashboard.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Dispatch.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/FlowEditor.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Flows.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Followup.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Index.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Instances.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Messages.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/NotFound.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Pipeline.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/Scraping.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/SettingsPage.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/UsersAdmin.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "pagina",
+  "caminho": "src/pages/VoiceProfiles.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/App.css"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/App.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/index.css"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/main.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/test/example.test.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/test/setup.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "src",
+  "caminho": "src/vite-env.d.ts"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/accordion.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/alert-dialog.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/alert.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/aspect-ratio.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/avatar.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/badge.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/breadcrumb.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/button.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/calendar.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/card.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/carousel.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/chart.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/checkbox.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/collapsible.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/command.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/context-menu.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/dialog.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/drawer.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/dropdown-menu.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/form.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/hover-card.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/input-otp.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/input.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/label.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/menubar.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/navigation-menu.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/pagination.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/popover.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/progress.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/radio-group.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/resizable.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/scroll-area.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/select.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/separator.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/sheet.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/sidebar.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/skeleton.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/slider.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/sonner.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/switch.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/table.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/tabs.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/textarea.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toast.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toaster.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toggle-group.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toggle.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/tooltip.tsx"
+ },
+ {
+  "doador": "A",
+  "repo": "blank-canvas-project-29",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/use-toast.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/AppLayout.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/AppSidebar.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/NavLink.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/PlaceholderPage.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/StatCard.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/StatusBadge.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CampaignDetails.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CampaignWizard.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/CsvUploader.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/broadcasts/MessageEditor.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/contacts/ContactDetailPanel.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/contacts/ContactImportDialog.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/contacts/ContactListPanel.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/contacts/PhoneInput.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/EdgeContextMenu.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/FlowNodeCard.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/FlowNodeConfigPanel.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/HelperLines.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/InsertNodeMenu.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/InsertableEdge.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/NodeContextMenu.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/useHelperLines.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/flow/useUndoRedo.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/instances/AddInstanceDialog.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/instances/WhatsAppInstancesManager.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/messages/TemplateVariationEditor.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/messages/WhatsAppPhonePreview.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/EditorAiButton.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/SlashRewriteCommand.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/extensions.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/messages/tiptap/serializer.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/preview/WhatsAppBubble.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/preview/WhatsAppButtons.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/preview/WhatsAppPreview.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/MediaUploader.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepBasicInfo.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepBody.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepButtons.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepCarouselCards.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepFooter.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepHeader.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepReview.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/StepSamples.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "componente",
+  "caminho": "src/components/wizard/WizardProgress.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "bun.lockb"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "components.json"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "eslint.config.js"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "index.html"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "package.json"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "postcss.config.js"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "public/favicon.ico"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "public/lovable-uploads/b677d082-d634-4f11-91cb-13ed415b12eb.png"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "public/lovable-uploads/ba741a41-a2de-483b-b086-7e214282fe22.png"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "public/placeholder.svg"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "public/robots.txt"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "supabase/config.toml"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "tailwind.config.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "tsconfig.app.json"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "tsconfig.json"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "tsconfig.node.json"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "vite.config.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "config",
+  "caminho": "vitest.config.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "doc",
+  "caminho": "README.md"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/ai-column-mapper/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/broadcast-processor/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/check-flow-timeouts/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/flow-executor/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/generate-message-variations/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/meta-webhook/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/send-meta-message/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/submit-template/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/sync-template-status/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/test-elevenlabs-tts/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "edge",
+  "caminho": "supabase/functions/validate-whatsapp-numbers/index.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/use-mobile.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/use-toast.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useBroadcasts.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useContacts.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useDispatchProfiles.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useFlows.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useMessageTemplates.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useTemplateWizard.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "hook",
+  "caminho": "src/hooks/useWhatsAppInstances.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "integracao",
+  "caminho": "src/integrations/supabase/client.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "integracao",
+  "caminho": "src/integrations/supabase/previewAuthStorage.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "integracao",
+  "caminho": "src/integrations/supabase/types.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/countries.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/metaLanguages.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/phoneUtils.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/spamWords.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/spintax.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/templateValidation.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "lib",
+  "caminho": "src/lib/utils.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228000506_3a660a7e-5391-4263-940f-e441fbbc7d52.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228002314_6d16d425-8092-4c67-a7c4-2dd486f18cce.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228003851_8a0e320a-c43d-41de-85bf-e4f4d71a8e5d.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228005247_530254dd-eadb-4cb7-835c-8bb04e1492bc.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228010328_9286bad6-9ad0-4c04-a953-84662db57924.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228010634_2004f87a-9ea7-4615-8356-7ff962dede20.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228011035_73a340d1-9767-4cd8-8907-1d8c9c6f3733.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228174751_95e0856e-8ca0-49ac-b630-cd7089acc0de.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228175728_3c4bb71f-98f7-43a2-8224-6627ba315b98.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228191820_b323302b-fe4b-4d6d-b935-46c52e21d18d.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228210209_9cdd60e1-b4ed-4f29-97f1-44c7eb6da8fd.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228222856_1ed7f4a6-a5a1-4d72-93fa-b80b1e94d462.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260228224659_40b544d9-87a1-4160-9254-07bcfc41803b.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260301002235_d37986ff-4970-4b77-bd2f-2a0b9a61a73e.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260302125834_fc38f47c-a20f-4409-af6e-905681f424f2.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260302133525_a4a10096-5a76-4edf-a9d8-2eb1bbe74644.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303161930_7359a7ac-d718-4ec3-8182-e72e6b87334f.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303164145_357fbdcc-38aa-4c67-b393-9ed2f90ad563.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303173908_fb2847f5-a704-455c-85f7-52be101e9770.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303173927_445fb875-a577-4eba-b2bb-cd379ce5f66d.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303174118_f7cd9e42-91bf-4a8f-bea1-8d5624f41fb2.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260303174638_169ee378-d5f1-4e1b-be93-c900bb3d2080.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304131903_89243503-2e34-4749-9400-672755304d51.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304141014_114561e9-7da0-4012-9e4b-42f9c4b1caef.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304141640_504d0264-246b-4c5a-8af5-308cb0c2034e.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260304150324_d8998554-2c4f-4494-9188-960f727f83eb.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305131308_3d811d06-44c4-4975-8a26-0c3824e2646f.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305132619_fdfff8c2-cf4d-4246-b780-a8ddcfe86818.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305143623_abf6dd87-3b33-4923-98bd-269c59c12ba5.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305151500_d23e03f8-39e6-4128-b582-88eb5dd65c26.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260305195135_7c8e23c5-2bcc-4353-9a67-9faa3b330bf7.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260306143409_e8582e2b-5e48-404f-a142-33b74a05b5e4.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260306151517_4d14e0a6-a567-402b-bb78-5052de225870.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260306172544_93e7679d-5c8e-47a6-9c71-520401a525d6.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260310165723_68bde62d-32c8-4e1d-9767-c3ca13936e5f.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260310203634_c7757a57-51fa-4659-a24f-f10be5a754bc.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260313195003_5446fbb5-7966-4340-9cdf-39ce264bc711.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260313200055_e0cf60f3-a51e-4e35-b6f5-5984ae01bc8e.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260313201840_807712bc-799f-47e7-a7df-90b9c1685c30.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "migration",
+  "caminho": "supabase/migrations/20260317200458_dd3c507e-47da-41ef-9a27-74c0858ed964.sql"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Campaigns.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Contacts.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/CreateTemplate.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Dashboard.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Dispatch.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/EditTemplate.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/FlowEditor.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Flows.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Help.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Index.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Instances.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/Messages.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "pagina",
+  "caminho": "src/pages/NotFound.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/App.css"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/App.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/assets/icon-via.png"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/assets/logo-via-white.png"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/custom.d.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/campaigns-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/contacts-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/csv-import-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/dashboard-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/flows-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/instances-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/data/help/templates-guide.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/index.css"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/main.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/test/example.test.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/test/setup.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "src",
+  "caminho": "src/vite-env.d.ts"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/accordion.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/alert-dialog.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/alert.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/aspect-ratio.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/avatar.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/badge.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/breadcrumb.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/button.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/calendar.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/card.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/carousel.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/chart.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/checkbox.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/collapsible.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/command.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/context-menu.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/dialog.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/drawer.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/dropdown-menu.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/form.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/hover-card.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/input-otp.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/input.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/label.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/menubar.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/navigation-menu.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/pagination.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/popover.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/progress.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/radio-group.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/resizable.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/scroll-area.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/select.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/separator.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/sheet.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/sidebar.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/skeleton.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/slider.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/sonner.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/switch.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/table.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/tabs.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/textarea.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toast.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toaster.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toggle-group.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/toggle.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/tooltip.tsx"
+ },
+ {
+  "doador": "B",
+  "repo": "whatsapp-flow-api-oficial-remix",
+  "tipo": "ui-shadcn",
+  "caminho": "src/components/ui/use-toast.ts"
+ }
+]

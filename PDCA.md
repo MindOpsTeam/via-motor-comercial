@@ -168,3 +168,123 @@ mudança dela precisa ser conferida uma a uma.
   direto nas tabelas (o gate de cobertura da fase 3).
 - Prova de permissão por perfil, perfil a perfil, com usuário real autenticado.
 - Telas dos módulos de prospecção e cadência.
+
+---
+
+## Ciclo 2 · 2026-09-08 — Porte das edge functions e gate de cobertura
+
+### Planejei
+
+Fase 3 da confluência: fazer o código dos doadores chegar ao produto **com destino
+declarado para cada artefato**, e provar que as funções portadas usam as portas únicas
+em vez de escreverem direto nas tabelas.
+
+### Fiz
+
+**Contrato (`_shared/flow.ts`)** — a camada por onde toda edge function fala com a
+espinha. Nenhuma função portada escreve direto em `contacts`, `deals`, `messages`,
+`send_queue`, `followup_enrollments` ou `journey_events`.
+
+**Motor único de entrega (`_shared/channel.ts` + `send-worker`)** — três funções de envio
+viraram três adapters do mesmo motor:
+
+| Antes | Depois |
+|---|---|
+| `send-meta-message` (doador B) | adapter `meta` |
+| `send-evolution-message` (doador A) | adapter `evolution` |
+| `whatsapp-sender` (trunk) | adapter `zernio` |
+
+Quem envia não escolhe provedor: enfileira e o `send-worker` resolve o canal. Trocar de
+provedor virou mudar uma linha em `channel_connections`.
+
+**Portadas** (o número entre parênteses é linha do original → linha do porte):
+
+| Função | Linhas | O que saiu |
+|---|---|---|
+| `lead-search-execute` | 782 → 230 | empresa virou entidade; a normalização de telefone saiu do TS |
+| `lead-enrich-ai` | 1686 → 180 | ficou só a qualificação; o score tem uma porta com autoridade |
+| `followup-processor` | 824 → 200 | a checagem de resposta e o envio saíram |
+| `followup-enroller` | 603 → 81 | a duplicidade virou índice único, não SELECT-antes-do-INSERT |
+| `broadcast-processor` | 2 × ~480 → 200 | as duas versões viraram uma; ritmo virou agendamento |
+| `meta-webhook` | 399 → 200 | a borda faz duas coisas: reivindicar o evento e chamar o nó |
+
+O que encolheu não foi funcionalidade — foi trabalho que o banco passou a fazer melhor,
+e código duplicado entre os dois doadores.
+
+**Gate de cobertura** (`scripts/cobertura.mjs` + `merge/`): 445 artefatos dos doadores,
+cada um com destino declarado.
+
+```
+portado       158
+fundido        94
+equivalente   193
+------------------
+cobertos      445 de 445
+no ar hoje    292
+no cutover    153  (28 regras, cada uma com passo declarado)
+
+GATE VERDE
+```
+
+**Roteiro de cutover** (`CUTOVER.md`): 9 passos, cada um com o que fazer, como verificar
+e como reverter. O gate exige que todo destino adiado cite um passo que existe no
+roteiro — é o que impede o adiamento de virar dívida invisível.
+
+### O que a prova mostrou
+
+`provas/prova-porte-edge-functions.sql`, no banco real, com rollback: **8 de 8 verdes.**
+
+```json
+{
+  "A_contrato_das_edges_responde": true,
+  "B_followup_enfileira_uma_vez":  true,
+  "C_webhook_claim_primeira_vez":  true,
+  "D_inbound_gravou_uma_mensagem": true,
+  "E_inbound_parou_a_cadencia":    true,
+  "F_inbound_abriu_oportunidade":  true,
+  "G_envio_pendente_cancelado":    true,
+  "H_worker_nao_pega_cancelado":   true
+}
+```
+
+`tsc --noEmit`: 0 erros. `npm run build`: verde. As 23 funções e módulos compartilhados
+transpilam.
+
+### O que mudei por causa da prova e da revisão
+
+**1. O `meta-webhook` podia perder a mensagem do cliente.**
+A borda reivindicava o evento (`webhook_claim`) e só depois chamava `flow_ingest_inbound`.
+Se a segunda chamada falhasse, o claim ficava de pé: a reentrega da Meta seria descartada
+como duplicata e a mensagem sumiria para sempre. A idempotência viraria perda de dado —
+que é o pior defeito possível numa borda de entrada. Agora o `catch` solta o claim, e a
+reentrega volta a passar.
+
+**2. Havia uma janela entre o claim do worker e a entrega.**
+`flow_ingest_inbound` cancela os envios em `pending` quando o lead responde. Mas se a
+resposta chega depois de o worker já ter reivindicado a linha, ela não está mais em
+`pending` e escapa do cancelamento — o lead recebe um follow-up automático segundos
+depois de ter respondido, que é a pior hora possível. A prova encontrou isso porque a
+ordem das chamadas expôs o caso. O worker passou a reverificar antes de entregar.
+
+**3. Duas consultas por pessoa na busca de leads.**
+`lead-search-execute` fazia um `COUNT` antes e outro depois de cada pessoa só para saber
+se o contato era novo — 50 consultas extras numa busca de 25 leads, e com leitura suja se
+outra busca rodasse ao mesmo tempo. Virou uma medição no começo e outra no fim.
+
+**4. `followup-processor` consultava o banco para achar um dado que já tinha em mãos.**
+A função `encerrar()` fazia um SELECT em `followup_enrollments` para pegar o
+`workspace_id` do registro que o laço já estava segurando.
+
+### Limitação conhecida
+
+Uma mensagem já entregue ao provedor não pode ser cancelada — o worker verifica antes de
+entregar, mas entre a entrega e a confirmação não há volta. Isso é correto: cancelar o
+que já saiu seria mentir para o operador.
+
+### Próximo ciclo
+
+- Passo 2 do cutover: migrar os canais dos doadores para `channel_connections` e publicar
+  `channel-connect` / `channel-health`.
+- Prova de permissão por perfil, com usuário real autenticado.
+- Passo 7: as telas dos módulos de prospecção, cadência, campanhas, canais e fluxos.
+

@@ -48,9 +48,9 @@ obrigavam a fazer.
 | `webhook_message_dedup` / `zernio_webhook_events` | ✓ | ✓ | ✓ | **`webhook_events`**, um por provedor, unique `(workspace_id, provider, provider_event_id)` | ✅ |
 | `is_blacklisted` vs `is_blocked` | ✓ | ✓ | ✓ | sobrou **um**: `is_blocked` + `blocked_reason`. A blacklist de campanha lê dali | ✅ |
 | `profiles`, `user_roles`, `has_role()` | ✓ | — | ✓ | trunk vence. Dois níveis: papel global (`app_role`) e papel no workspace (`workspace_member_role`) | ✅ |
-| `flows`, `flow_nodes`, `flow_edges`, `flow_executions` | ✓ | ✓ | — | doador B vence (mais recente) | ⏳ ciclo 2 |
+| `flows`, `flow_nodes`, `flow_edges`, `flow_executions` | ✓ | ✓ | — | doador B vence (mais recente) | ⏳ cutover passo 5 |
 | `broadcast_campaigns` / `broadcast_recipients` | ✓ | ✓ | — | doador B + rotação de mídia do doador A | ✅ |
-| `voice_profiles`, `dispatch_profiles` | ✓ | ✓ | — | portados | ⏳ ciclo 2 |
+| `voice_profiles`, `dispatch_profiles` | ✓ | ✓ | — | portados | ⏳ cutover passo 7 |
 
 **Sem colisão, portados inteiros:** `lead_companies`, `lead_searches`, `scraping_jobs`,
 `followup_sequences/_steps/_enrollments/_logs` (doador A) · `meta_templates` (doador B) ·
@@ -127,9 +127,13 @@ que uma mensagem não saiu. Escrita continua fechada.
 | 1 · Trunk e fronteira | trunk decidido, repo conectado | ✅ |
 | 2 · Espinha de dados | `workspace_id` em tudo; chaves naturais | ✅ 54 tabelas, 0 sem tenancy |
 | 2b · Carga dos doadores | idempotente por `legacy_source`/`legacy_id` | ⏳ aguarda a fonte de produção |
-| 3 · Código com história | gate de cobertura verde | ⏳ ciclo 2 |
-| 4 · Regra de negócio | prova transacional verde | ✅ 13/13 — `provas/prova-fluxo-ponta-a-ponta.sql` |
+| 3 · Código com história | gate de cobertura verde | ✅ 445/445 com destino declarado — `node scripts/cobertura.mjs` |
+| 4 · Regra de negócio | prova transacional verde | ✅ 15/15 fluxo + 8/8 porte — `provas/*.sql` |
 | 5 · Permissão | prova de permissão por perfil | 🟡 190 policies aplicadas; prova com usuário real pendente |
 | 6 · Interface e cutover | E2E com dado real | ⏳ |
 
-Diário com a evidência de cada ciclo: [`PDCA.md`](PDCA.md).
+**Onde está cada coisa:** o destino de todo artefato dos doadores está em
+[`merge/mapa-destinos.json`](merge/mapa-destinos.json), e
+[`scripts/cobertura.mjs`](scripts/cobertura.mjs) falha se algum ficar sem.
+
+Roteiro de virada: [`CUTOVER.md`](CUTOVER.md) · Diário: [`PDCA.md`](PDCA.md).
